@@ -1,7 +1,6 @@
 from db.hotel_db import HotelInDB
 from db.hotel_db import get_hotel, create_hotel, delete_hotel, update_hotel
 from models.hotel_models import HotelIn, HotelOut
-
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -17,8 +16,11 @@ origins = [
 ]
 
 app.add_middleware(
-    CORSMiddleware, allow_origins=origins,
-    allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
+    CORSMiddleware, 
+    allow_origins=origins,
+    allow_credentials=True, 
+    allow_methods=["*"], 
+    allow_headers=["*"],
 )
 
 @app.get("/test/")
